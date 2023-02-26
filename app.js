@@ -55,7 +55,6 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) =>{
-    
     res.locals.currentUser = req.user; //hogy "globális" elérjük a current usert a navbarnál pl, és ne kelljen minden requestnél lekérni újra.
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
